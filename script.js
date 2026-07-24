@@ -10,18 +10,23 @@ const particleContainer = document.getElementById("particles");
 
 openBtn.addEventListener("click", () => {
 
-    // Play Music
+    music.currentTime = 0;
     music.volume = 0.7;
-    music.play().catch(() => {});
 
-    // Show Main Content
+    const playPromise = music.play();
+
+    if(playPromise !== undefined){
+        playPromise.catch(err=>{
+            console.log(err);
+        });
+    }
+
     opening.classList.add("hide");
 
-    setTimeout(() => {
+    setTimeout(()=>{
         mainContent.classList.add("show");
-    }, 350);
+    },350);
 
-    // Falling Effect
     createParticles();
 
 });
