@@ -58,8 +58,12 @@ button{
     position:fixed;
     inset:0;
     background:
-        linear-gradient(rgba(32,8,14,.78),rgba(32,8,14,.90)),
-        url("images/bg.jpg") center/cover;
+    linear-gradient(
+    180deg,
+    #6d1630 0%,
+    #4f0f22 50%,
+    #360814 100%
+    );
     display:flex;
     justify-content:center;
     align-items:center;
